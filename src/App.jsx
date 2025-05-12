@@ -5,17 +5,29 @@ import guleHusetImage from './assets/gulehuset_landscape.png';
 import hostImage from './assets/frimodig.png';
 
 function App() {
+  const handleHostClick = () => {
+    console.log('HLICKNS');
+    /* make the image jiggle for a couple of seconds */
+    const hostImageElement = document.querySelector('.imgHost');
+    hostImageElement.classList.add('jiggle');
+    setTimeout(() => {
+      hostImageElement.classList.remove('jiggle');
+    }, 2000);
+  };
+
   return (
     <div className="appContainer">
       {/* Hero Section */}
       <div className="imageContainer">
         <img className="imgHero" src={guleHusetImage} alt="Det Gule Huset" />;
       </div>
-      <div className="imageHostContainer">
-        <img className="imgHost" src={hostImage} alt="Vertskapet" />;
-      </div>
-
-      {/* Title and Description */}
+      <img
+        onClick={handleHostClick}
+        className="imgHost"
+        src={hostImage}
+        alt="Vertskapet"
+      />
+      ;{/* Title and Description */}
       <div className="titleContainer">
         <h1 className="title">17. mai-fest i Det Gule Huset</h1>
         <a
