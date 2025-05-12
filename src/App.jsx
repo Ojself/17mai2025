@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import guleHusetImage from './assets/gulehuset_landscape.png';
 import hostImage from './assets/frimodig.png';
@@ -36,6 +37,7 @@ function App() {
           target="_blank"
           className="address"
         >
+          <FaMapMarkerAlt />
           Dops Gate 12
         </a>
       </div>
@@ -44,7 +46,8 @@ function App() {
           <p className="">
             Kom og bli med på feiringen av 17. mai i Det Gule Huset! Vi åpner
             dørene kl. 14:00 og holder åpent til sent. Så hvis du er i området
-            og ønsker å feire nasjonaldagen med oss, er du hjertelig velkommen!
+            og ønsker å feire nasjonaldagen med oss, er du hjertelig velkommen
+            til Det Gule huset!
           </p>
         </div>
         <div className="mapContainer">
