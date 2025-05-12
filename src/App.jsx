@@ -59,8 +59,8 @@ function App() {
           <p className="">
             Kom og bli med på feiringen av 17. mai i Det Gule Huset! Vi åpner
             dørene kl. <span>{eventTime}</span> og holder åpent til sent. Så
-            hvis du er i området og ønsker å ta turen innom, er du hjertelig
-            velkommen til Det Gule Huset!
+            hvis du er i området og ønsker å ta turen innom for en øl, is eller
+            pølse, er du hjertelig velkommen til Det Gule Huset!
           </p>
         </div>
         <div className="mapContainer">
