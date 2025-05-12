@@ -1,0 +1,81 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.imageContainer {
+  height: 55vh;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.imgHero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imgHost {
+  position: absolute;
+  top: 40%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  max-width: 100px;
+}
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin-bottom: 0px;
+}
+.address {
+  margin-top: 0px;
+  text-decoration: none;
+  color: rgba(48, 70, 141, 0.87);
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+  &:hover {
+    color: rgba(48, 70, 141, 0.87);
+    text-decoration: underline;
+  }
+}
+
+.detailsAndMapContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  border-radius: 8px;
+}
+.detailsContainer {
+  width: 50%;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.mapContainer {
+  width: 40%;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.map {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
