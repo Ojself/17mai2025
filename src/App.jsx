@@ -30,13 +30,13 @@ function App() {
       {/* Hero Section */}
       <div className="imageContainer">
         <img className="imgHero" src={guleHusetImage} alt="Det Gule Huset" />;
+        <img
+          onClick={handleHostClick}
+          className="imgHost"
+          src={hostImage}
+          alt="Vertskapet"
+        />
       </div>
-      <img
-        onClick={handleHostClick}
-        className="imgHost"
-        src={hostImage}
-        alt="Vertskapet"
-      />
       {/* Title and Description */}
       <div className="titleContainer">
         <div className="titleAndImage">
@@ -66,7 +66,7 @@ function App() {
         <div className="mapContainer">
           <iframe
             className="map"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=10.746364295482637%2C59.919230131826765%2C10.74881047010422%2C59.920308305237434&amp;layer=transportmap&amp;marker=59.91976922291057%2C10.747587382793427"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=10.746364295482637%2C59.919230131826765%2C10.74881047010422%2C59.920308305237434&amp;layer=mapnik&amp;marker=59.91976922291057%2C10.747587382793427"
           ></iframe>
         </div>
       </div>
