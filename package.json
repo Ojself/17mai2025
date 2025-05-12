@@ -1,6 +1,5 @@
 {
   "name": "17mai2025",
-  "homepage": "https://ojself.github.io/17mai2025/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "react": "^19.1.0",
