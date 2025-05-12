@@ -4,6 +4,8 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import guleHusetImage from './assets/gulehuset_landscape.png';
 import hostImage from './assets/frimodig.png';
+import flaggImage from './assets/flagg.png';
+
 import { useSearchParams } from 'react-router-dom';
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
   const [searchParams] = useSearchParams();
 
   // Determine time based on query params
-  const hasChildren = searchParams.get('hasChildren') === 'true';
+  const hasChildren = searchParams.get('barn') === 'true';
   const eventTime = hasChildren ? '14:00' : '16:00';
 
   const handleHostClick = () => {
@@ -37,7 +39,10 @@ function App() {
       />
       {/* Title and Description */}
       <div className="titleContainer">
-        <h1 className="title">17. mai-fest i Det Gule Huset</h1>
+        <div className="titleAndImage">
+          <h1 className="title">17. mai-feiring i Det Gule Huset</h1>
+          <img className="imgFlagg" src={flaggImage} alt="Norgesflagg" />
+        </div>
 
         <a
           href={GOOGLE_HREF}
@@ -54,8 +59,8 @@ function App() {
           <p className="">
             Kom og bli med på feiringen av 17. mai i Det Gule Huset! Vi åpner
             dørene kl. <span>{eventTime}</span> og holder åpent til sent. Så
-            hvis du er i området og ønsker å feire nasjonaldagen med oss, er du
-            hjertelig velkommen til Det Gule huset!
+            hvis du er i området og ønsker å ta turen innom, er du hjertelig
+            velkommen til Det Gule Huset!
           </p>
         </div>
         <div className="mapContainer">

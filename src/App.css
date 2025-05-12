@@ -37,6 +37,18 @@
   z-index: 100;
 }
 
+.titleAndImage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.imgFlagg {
+  object-fit: cover;
+  margin-left: 0.5rem;
+  height: 5vh;
+}
+
 /* Title and Address */
 .titleContainer {
   display: flex;
@@ -101,10 +113,10 @@
   0% {
     transform: rotate(0deg) translate(-50%, -50%);
   }
-  40% {
+  33% {
     transform: rotate(4deg) translate(-50%, -50%);
   }
-  80% {
+  66% {
     transform: rotate(-4deg) translate(-50%, -50%);
   }
 }
@@ -112,13 +124,32 @@
 /* Responsive Media Queries */
 @media (max-width: 768px) {
   :root {
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .titleContainer {
+    align-items: start;
+    text-align: left;
+  }
+
+  .titleAndImage {
+    align-items: center;
   }
 
   .imgHost {
     max-width: 90px;
     top: 32%;
     left: 75%;
+  }
+  .address {
+    text-align: left;
+  }
+
+  .imgFlagg {
+    margin-top: 30px;
   }
 
   .detailsAndMapContainer {
