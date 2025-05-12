@@ -114,7 +114,9 @@
   }
 
   .imgHost {
-    max-width: 70px; /* Smaller image on small screens */
+    max-width: 90px;
+    top: 32%;
+    left: 75%;
   }
 
   .detailsAndMapContainer {
