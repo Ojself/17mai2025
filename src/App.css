@@ -69,14 +69,14 @@
   justify-content: space-between;
   margin-top: 2rem;
   border-radius: 8px;
-  flex-wrap: wrap;
 }
 
 .detailsContainer {
-  width: 50%;
+  flex: 1;
   padding: 1rem;
   background-color: #fff;
   border-radius: 8px;
+  margin-right: 10px;
 }
 
 .mapContainer {
@@ -84,10 +84,12 @@
   padding: 2rem;
   background-color: #fff;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
 }
 
 .map {
-  width: 100%;
+  width: 90%;
   height: 100%;
   border-radius: 8px;
 }
@@ -123,9 +125,13 @@
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  .detailsContainer,
+  .detailsContainer {
+    padding: 1rem;
+    margin-right: 0px;
+  }
   .mapContainer {
     width: 100%;
     padding: 1rem;

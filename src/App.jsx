@@ -6,8 +6,9 @@ import guleHusetImage from './assets/gulehuset_landscape.png';
 import hostImage from './assets/frimodig.png';
 
 function App() {
+  const GOOGLE_HREF = 'https://maps.app.goo.gl/3sZv5LDSwMVTq5jXA';
+
   const handleHostClick = () => {
-    console.log('HLICKNS');
     /* make the image jiggle for a couple of seconds */
     const hostImageElement = document.querySelector('.imgHost');
     hostImageElement.classList.add('jiggle');
@@ -28,11 +29,11 @@ function App() {
         src={hostImage}
         alt="Vertskapet"
       />
-      ;{/* Title and Description */}
+      {/* Title and Description */}
       <div className="titleContainer">
         <h1 className="title">17. mai-fest i Det Gule Huset</h1>
         <a
-          href="https://maps.app.goo.gl/3sZv5LDSwMVTq5jXA"
+          href={GOOGLE_HREF}
           rel="noopener noreferrer"
           target="_blank"
           className="address"
