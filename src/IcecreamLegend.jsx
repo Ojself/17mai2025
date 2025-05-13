@@ -137,7 +137,13 @@ const IcecreamLegend = ({ images }) => {
                   zIndex: 100,
                 }}
               >
-                <button className="close-button" onClick={closeModal}>
+                <button
+                  className="close-button"
+                  onClick={() => {
+                    setSelectedIceCream(previousChoice);
+                    closeModal();
+                  }}
+                >
                   Lukk
                 </button>
                 <button

@@ -108,8 +108,8 @@
 }
 
 .icecream-legend-preview {
-  max-height: 210px;
-  max-width: 210px;
+  max-height: 250px;
+  max-width: 250px;
   padding: 1.5px;
   object-fit: contain;
   border-radius: 5px;

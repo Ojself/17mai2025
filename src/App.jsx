@@ -92,8 +92,8 @@ function App() {
   }, [hasPinged]);
 
   // Determine time based on query params
-  const hasChildren = searchParams.get('barn') === 'true';
-  const eventTime = hasChildren ? '14:00' : '16:00';
+  const eventTime = searchParams.get('kl') || '16';
+  const eventTimeSuffixed = `${eventTime}:00`;
 
   const handleHostClick = () => {
     const hostImageElement = document.querySelector('.imgHost');
@@ -136,9 +136,9 @@ function App() {
         <div className="detailsContainer">
           <p style={{ fontSize: '1.2rem' }}>
             Kom og bli med på feiringen av 17. mai i Det Gule Huset! Vi åpner
-            dørene kl. <span>{eventTime}</span> og holder åpent til sent. Så
-            hvis du er i området og ønsker å ta turen innom for en øl, is eller
-            pølse, er du hjertelig velkommen til Det Gule Huset!
+            dørene kl. <span>{eventTimeSuffixed}</span> og holder åpent til
+            sent. Så hvis du er i området og ønsker å ta turen innom for en øl,
+            is eller pølse, er du hjertelig velkommen til Det Gule Huset!
           </p>
         </div>
         <div className="icecreamLegendContainer">
