@@ -223,9 +223,15 @@
   :root {
     padding: 0.5rem;
   }
+  .legend-image-wrapper {
+    flex: 0 1 40px;
+  }
+  .legend-images {
+    gap: 1px;
+  }
   .legend-image {
-    max-height: 120px;
-    max-width: 120px;
+    max-height: 84px;
+    max-width: 84px;
   }
 
   h1 {
