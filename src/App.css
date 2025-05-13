@@ -158,17 +158,16 @@
 }
 
 .legend-image-wrapper {
-  flex: 0 1 100px;
+  flex: 0 1 140px;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .legend-image.selected {
-  border: 1.5px solid #333;
-  padding: 0px;
+  border: 1px solid #333;
+
   border-radius: 12px;
 }
 
@@ -224,15 +223,20 @@
   :root {
     padding: 0.5rem;
   }
-  .legend-image-wrapper {
-    flex: 0 1 70px;
-  }
   .legend-images {
-    gap: 1px;
+    gap: 2px;
   }
+  .legend-image-wrapper {
+    flex: 0 1 60px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .legend-image {
-    max-height: 90px;
-    max-width: 90px;
+    max-height: 80px;
+    max-width: 80px;
   }
 
   h1 {

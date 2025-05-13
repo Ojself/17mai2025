@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { preload } from 'react-dom';
+
 import './App.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -68,6 +70,11 @@ const GOOGLE_HREF = 'https://maps.app.goo.gl/3sZv5LDSwMVTq5jXA';
 function App() {
   const [hasPinged, setHasPinged] = useState(false);
   const [searchParams] = useSearchParams();
+  useEffect(() => {
+    images.forEach((image) => {
+      preload(image.source, { as: 'image' });
+    });
+  }, []);
 
   useEffect(() => {
     if (!hasPinged) {
