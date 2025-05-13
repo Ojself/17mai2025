@@ -41,7 +41,6 @@ const IcecreamLegend = ({ images }) => {
       setPreviousChoice(selectedIceCream);
 
       const userId = localStorage.getItem('userId');
-
       const payload = {
         userId,
         choice: selectedIceCream,
@@ -100,6 +99,7 @@ const IcecreamLegend = ({ images }) => {
                   onClick={() => selectIceCream(image.id)}
                 >
                   <img
+                    loading="eager"
                     src={image.source}
                     alt={image.id}
                     className={`legend-image ${
