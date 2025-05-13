@@ -76,7 +76,7 @@ const IcecreamLegend = ({ images }) => {
   const previewImage = images.find((image) => image.id === selectedIceCream);
   const previewImageSrc = previewImage ? previewImage.source : iceCreamLegend;
 
-  const previewText = selectedIceCream ? 'Din bestilling' : `Bestill en is!`;
+  const previewText = selectedIceCream ? 'Din Favoritt' : `Velg en favoritt!`;
 
   return (
     <div className="icecream-legend-container">
