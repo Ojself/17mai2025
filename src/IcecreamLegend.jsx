@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import iceCreamLegend from './assets/legend.png';
 
@@ -76,7 +77,7 @@ const IcecreamLegend = ({ images }) => {
   const previewImage = images.find((image) => image.id === selectedIceCream);
   const previewImageSrc = previewImage ? previewImage.source : iceCreamLegend;
 
-  const previewText = selectedIceCream ? 'Din Favoritt' : `Velg en favoritt!`;
+  const previewText = selectedIceCream ? 'Din favoritt' : `Velg en favoritt!`;
 
   return (
     <div className="icecream-legend-container">
@@ -96,51 +97,61 @@ const IcecreamLegend = ({ images }) => {
         />
       </div>
 
-      {isModalOpen && (
-        <div className="icecream-legend-modal">
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div style={{ textAlign: 'center', fontSize: '1.25em' }}>
-              <h2>Velg din favoritt!</h2>
-            </div>
-            <div className="legend-images">
-              {images.map((image) => (
-                <div
-                  key={image.id}
-                  className={`legend-image-wrapper`}
-                  onClick={() => selectIceCream(image.id)}
-                >
-                  <img
-                    loading="lazy"
-                    src={image.source}
-                    alt={image.id}
-                    className={`legend-image${
-                      selectedIceCream === image.id ? '-selected' : ''
-                    }`}
-                  />
-                </div>
-              ))}
-            </div>
-            <div style={{ width: '100%', textAlign: 'center' }}>
-              <button
-                className="close-button"
-                onClick={() => {
-                  setSelectedIceCream(previousChoice);
-                  closeModal();
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className="icecream-legend-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="modal-content"
+              initial={{ scale: 0.8, y: 50 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.8, y: 50 }}
+            >
+              <h2 style={{ textAlign: 'center' }}>Velg din favoritt!</h2>
+              <div className="legend-images">
+                {images.map((image) => (
+                  <motion.div
+                    key={image.id}
+                    className="legend-image-wrapper"
+                    onClick={() => selectIceCream(image.id)}
+                  >
+                    <img
+                      loading="lazy"
+                      src={image.source}
+                      alt={image.id}
+                      className={`legend-image${
+                        selectedIceCream === image.id ? '-selected' : ''
+                      }`}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  zIndex: 100,
                 }}
               >
-                Lukk
-              </button>
-              <button
-                disabled={!selectedIceCream} // Disable if no ice cream is selected
-                className="send-button"
-                onClick={sendChoice}
-              >
-                Bestill!
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+                <button className="close-button" onClick={closeModal}>
+                  Lukk
+                </button>
+                <button
+                  disabled={!selectedIceCream}
+                  className="send-button"
+                  onClick={sendChoice}
+                >
+                  Velg!
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -134,7 +134,7 @@ function App() {
       </div>
       <div className="detailsAndIcecreamContainer">
         <div className="detailsContainer">
-          <p className="">
+          <p style={{ fontSize: '1.2rem' }}>
             Kom og bli med på feiringen av 17. mai i Det Gule Huset! Vi åpner
             dørene kl. <span>{eventTime}</span> og holder åpent til sent. Så
             hvis du er i området og ønsker å ta turen innom for en øl, is eller
