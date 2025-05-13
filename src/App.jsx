@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -8,10 +8,27 @@ import flaggImage from './assets/flagg.png';
 
 import { useSearchParams } from 'react-router-dom';
 
-function App() {
-  const GOOGLE_HREF = 'https://maps.app.goo.gl/3sZv5LDSwMVTq5jXA';
+import IcecreamLegend from './IcecreamLegend';
 
+const GOOGLE_HREF = 'https://maps.app.goo.gl/3sZv5LDSwMVTq5jXA';
+function App() {
+  const [hasPinged, setHasPinged] = useState(false);
   const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (!hasPinged) {
+      fetch('https://one7mayserver.onrender.com/ping', {
+        method: 'GET',
+      }).then((response) => {
+        if (response.ok) {
+          console.log('Pinged successfully');
+        } else {
+          console.error('Failed to ping');
+        }
+      });
+      setHasPinged(true);
+    }
+  }, [hasPinged]);
 
   // Determine time based on query params
   const hasChildren = searchParams.get('barn') === 'true';
@@ -54,7 +71,7 @@ function App() {
           Dops Gate 12
         </a>
       </div>
-      <div className="detailsAndMapContainer">
+      <div className="detailsAndIcecreamContainer">
         <div className="detailsContainer">
           <p className="">
             Kom og bli med på feiringen av 17. mai i Det Gule Huset! Vi åpner
@@ -63,11 +80,8 @@ function App() {
             pølse, er du hjertelig velkommen til Det Gule Huset!
           </p>
         </div>
-        <div className="mapContainer">
-          <iframe
-            className="map"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=10.746364295482637%2C59.919230131826765%2C10.74881047010422%2C59.920308305237434&amp;layer=mapnik&amp;marker=59.91976922291057%2C10.747587382793427"
-          ></iframe>
+        <div className="icecreamLegendContainer">
+          <IcecreamLegend />
         </div>
       </div>
     </div>
