@@ -110,11 +110,11 @@ const IcecreamLegend = ({ images }) => {
                   onClick={() => selectIceCream(image.id)}
                 >
                   <img
-                    loading="eager"
+                    loading="lazy"
                     src={image.source}
                     alt={image.id}
-                    className={`legend-image ${
-                      selectedIceCream === image.id ? 'selected' : ''
+                    className={`legend-image${
+                      selectedIceCream === image.id ? '-selected' : ''
                     }`}
                   />
                 </div>
