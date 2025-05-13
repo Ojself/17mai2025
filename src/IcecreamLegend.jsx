@@ -113,22 +113,26 @@ const IcecreamLegend = ({ images }) => {
             >
               <h2 style={{ textAlign: 'center' }}>Velg din favoritt!</h2>
               <div className="legend-images">
-                {images.map((image) => (
-                  <motion.div
-                    key={image.id}
-                    className="legend-image-wrapper"
-                    onClick={() => selectIceCream(image.id)}
-                  >
-                    <img
-                      loading="lazy"
-                      src={image.source}
-                      alt={image.id}
-                      className={`legend-image${
-                        selectedIceCream === image.id ? '-selected' : ''
-                      }`}
-                    />
-                  </motion.div>
-                ))}
+                {images.map((image) => {
+                  const scale = image.id === 'potet' ? 1.2 : 1;
+                  return (
+                    <motion.div
+                      key={image.id}
+                      animate={{ scale }}
+                      className="legend-image-wrapper"
+                      onClick={() => selectIceCream(image.id)}
+                    >
+                      <motion.img
+                        loading="lazy"
+                        src={image.source}
+                        alt={image.id}
+                        className={`legend-image${
+                          selectedIceCream === image.id ? '-selected' : ''
+                        }`}
+                      />
+                    </motion.div>
+                  );
+                })}
               </div>
               <div
                 style={{
