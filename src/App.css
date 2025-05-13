@@ -224,14 +224,14 @@
     padding: 0.5rem;
   }
   .legend-image-wrapper {
-    flex: 0 1 40px;
+    flex: 0 1 70px;
   }
   .legend-images {
     gap: 1px;
   }
   .legend-image {
-    max-height: 84px;
-    max-width: 84px;
+    max-height: 90px;
+    max-width: 90px;
   }
 
   h1 {
