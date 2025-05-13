@@ -19,6 +19,7 @@ import creme_pos from './assets/is/creme_pos.png';
 import daim from './assets/is/daim.png';
 import dream_mango from './assets/is/dream_mango.png';
 import friskis_fersken from './assets/is/friskis_fersken.png';
+import potet from './assets/is/potet.png';
 import friskis from './assets/is/friskis.png';
 import gigant_original from './assets/is/gigant_original.png';
 import kroneis_jordbær from './assets/is/kroneis_jordbær.png';
@@ -48,6 +49,7 @@ const images = [
   { source: creme_lakris, isPortrait: false, id: 'creme_lakris' },
   { source: creme_pos, isPortrait: false, id: 'creme_pos' },
   { source: friskis_fersken, isPortrait: false, id: 'friskis_fersken' },
+  { source: potet, isPortrait: false, id: 'potet' },
   { source: friskis, isPortrait: false, id: 'friskis' },
   { source: gigant_original, isPortrait: false, id: 'gigant_original' },
   { source: melkesjokolade, isPortrait: false, id: 'melkesjokolade' },
