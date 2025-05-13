@@ -30,6 +30,7 @@ import royal_trippel_original from './assets/is/royal_trippel_original.png';
 import sandwhich from './assets/is/sandwhich.png';
 import snickers from './assets/is/snickers.png';
 import solis from './assets/is/solis.png';
+import ringnes from './assets/is/ringnes.png';
 
 const images = [
   { source: big_deal_karamell, isPortrait: true, id: 'big_deal_karamell' },
@@ -60,6 +61,7 @@ const images = [
   },
   { source: sandwhich, isPortrait: false, id: 'sandwhich' },
   { source: snickers, isPortrait: false, id: 'snickers' },
+  { source: ringnes, isPortrait: false, id: 'ringnes' },
 ];
 
 const GOOGLE_HREF = 'https://maps.app.goo.gl/3sZv5LDSwMVTq5jXA';

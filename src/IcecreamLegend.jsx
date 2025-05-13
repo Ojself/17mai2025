@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import iceCreamLegend from './assets/legend.png';
+
 import './App.css';
 const IcecreamLegend = ({ images }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,6 +11,7 @@ const IcecreamLegend = ({ images }) => {
   useEffect(() => {
     const savedChoice = localStorage.getItem('selectedIceCream');
     if (savedChoice) {
+      console.log('saved choice', savedChoice);
       setSelectedIceCream(savedChoice);
       setPreviousChoice(savedChoice);
     }
@@ -16,6 +19,7 @@ const IcecreamLegend = ({ images }) => {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape' && isModalOpen) {
+        setSelectedIceCream(previousChoice);
         closeModal();
       }
     };
@@ -29,11 +33,12 @@ const IcecreamLegend = ({ images }) => {
   const openModal = () => setIsModalOpen(true);
 
   const closeModal = () => {
-    setSelectedIceCream(previousChoice); // Revert to saved choice on close
     setIsModalOpen(false);
   };
 
-  const selectIceCream = (id) => setSelectedIceCream(id);
+  const selectIceCream = (id) => {
+    setSelectedIceCream(id);
+  };
 
   const sendChoice = () => {
     if (selectedIceCream) {
@@ -61,7 +66,7 @@ const IcecreamLegend = ({ images }) => {
         })
         .then((json) => {
           localStorage.setItem('userId', json.userId);
-          closeModal();
+          closeModal(selectedIceCream);
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -69,13 +74,19 @@ const IcecreamLegend = ({ images }) => {
     }
   };
   const previewImage = images.find((image) => image.id === selectedIceCream);
-  const previewImageSrc = previewImage ? previewImage.source : images[0].source;
+  const previewImageSrc = previewImage ? previewImage.source : iceCreamLegend;
 
   const previewText = selectedIceCream ? 'Din favoritt' : `Velg is!`;
 
   return (
     <div className="icecream-legend-container">
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <h2>{previewText}</h2>
         <img
           src={previewImageSrc}
@@ -110,7 +121,13 @@ const IcecreamLegend = ({ images }) => {
               ))}
             </div>
             <div style={{ width: '100%', textAlign: 'center' }}>
-              <button className="close-button" onClick={closeModal}>
+              <button
+                className="close-button"
+                onClick={() => {
+                  setSelectedIceCream(previousChoice);
+                  closeModal();
+                }}
+              >
                 Lukk
               </button>
               <button
