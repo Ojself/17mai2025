@@ -244,6 +244,14 @@
     max-width: 80px;
   }
 
+  .legend-image-selected {
+    transform: scale(1.1) rotate(-2deg);
+  }
+
+  .legend-image:hover {
+    transform: scale(1.1) rotate(-2deg);
+  }
+
   h1 {
     font-size: 1.5rem;
   }
