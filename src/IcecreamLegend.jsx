@@ -76,7 +76,7 @@ const IcecreamLegend = ({ images }) => {
   const previewImage = images.find((image) => image.id === selectedIceCream);
   const previewImageSrc = previewImage ? previewImage.source : iceCreamLegend;
 
-  const previewText = selectedIceCream ? 'Din favoritt' : `Velg is!`;
+  const previewText = selectedIceCream ? 'Din bestilling' : `Bestill en is!`;
 
   return (
     <div className="icecream-legend-container">
@@ -135,7 +135,7 @@ const IcecreamLegend = ({ images }) => {
                 className="send-button"
                 onClick={sendChoice}
               >
-                Velg!
+                Bestill!
               </button>
             </div>
           </div>
